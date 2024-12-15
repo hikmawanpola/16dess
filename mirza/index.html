@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Ulang Tahun</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Background Audio -->
+    <audio id="background-audio">
+      <source src="music/umrik.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Halaman 1 -->
+    <div class="container">
+      <h1>Selamat Ulang Tahun!</h1>
+      <p class="question">
+        Siapa yang berulang tahun 16 Desember? tap tombol di bawah
+      </p>
+
+      <!-- Tombol Tricky -->
+      <button class="tricky-btn">Ibu</button>
+      <button class="tricky-btn">Mas Mawan</button>
+      <button class="tricky-btn">Bapak</button>
+
+      <!-- Tombol Menuju Halaman 2 -->
+      <a href="page2.html" class="next-btn">Mirza Ganteng</a>
+
+      <!-- Kontrol Audio -->
+      <div class="audio-controls">
+        <button id="play-btn" onclick="playAudio()">Setel Musik</button>
+        <button id="stop-btn" onclick="stopAudio()">Stop Musik</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

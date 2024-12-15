@@ -1,0 +1,125 @@
+/* Reset dan Tampilan Umum */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.card-container {
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom */
+  gap: 15px;
+  justify-items: center; /* Agar kartu berada di tengah kolom */
+}
+
+.card {
+  width: 100%; /* Agar kartu responsif dengan lebar kontainer */
+  aspect-ratio: 1; /* Memastikan kartu tetap kotak (rasio lebar dan tinggi 1:1) */
+  max-width: 300px; /* Maksimal lebar kartu */
+  margin: 10px;
+  background-color: lightgray;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: lightcoral;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+/* Media Queries untuk Responsivitas pada Berbagai Ukuran Layar */
+
+/* Pada layar kecil (max-width: 600px) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em; /* Menyesuaikan ukuran teks */
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* Menyesuaikan menjadi 2 kolom */
+  }
+
+  .card {
+    max-width: 90%; /* Mengurangi ukuran kartu untuk layar kecil */
+  }
+}
+
+/* Pada layar medium (max-width: 1024px) */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.2em; /* Menyesuaikan ukuran teks */
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr); /* Menyesuaikan menjadi 3 kolom */
+  }
+
+  .card {
+    max-width: 90%; /* Mengurangi ukuran kartu */
+  }
+}
+
+/* Pada layar besar (lebih dari 1024px) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 2.5em; /* Ukuran standar pada layar besar */
+  }
+
+  .cards {
+    grid-template-columns: repeat(4, 1fr); /* Menampilkan 4 kolom */
+  }
+
+  .card {
+    max-width: 300px; /* Ukuran standar pada layar besar */
+  }
+}
